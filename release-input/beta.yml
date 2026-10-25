@@ -1,0 +1,10 @@
+version: 2.4.1-beta.7
+files:
+  - url: EVE-Setup-2.4.1-beta.7-x64.exe
+    sha512: >-
+      EqgbxhEvooBTrQ1tFa8Da8dOMdQJtKQLok2KA3/UcYpsWbhirq/LjCQauTZ2jcxqGLRiIDLKo7bnjanaXQKErQ==
+    size: 101162342
+path: EVE-Setup-2.4.1-beta.7-x64.exe
+sha512: >-
+  EqgbxhEvooBTrQ1tFa8Da8dOMdQJtKQLok2KA3/UcYpsWbhirq/LjCQauTZ2jcxqGLRiIDLKo7bnjanaXQKErQ==
+releaseDate: '2026-10-25T21:28:05.488Z'
