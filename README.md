@@ -4,7 +4,7 @@ update for eve
 <!-- eve-update-feed -->
 ## E.V.E desktop beta releases
 
-[Download the current beta installer](https://github.com/gtrongames57/eve-desktop-updates/releases/tag/v2.4.1-beta.3). Install it manually once to enable published-release checking inside E.V.E.
+[Download the current beta installer](https://github.com/gtrongames57/eve-desktop-updates/releases/tag/v2.4.1-beta.4). Install it manually once to enable published-release checking inside E.V.E.
 
 This repository distributes Windows x64 installers, signed release metadata and the update feed. The development source repository remains separate. Normal packaged application code is included in the distributed binary.
 
@@ -15,4 +15,4 @@ Release signatures use the public authority bundled with the bootstrap app. Publ
 <!-- eve-resource-pack -->
 ## Signed FORGE resource packs
 
-Beta.2 adds signed data-only resource installs and restore, with native Windows account verification. [Download the Welcome resource pack](https://github.com/gtrongames57/eve-desktop-updates/releases/download/v2.4.1-beta.3/EVE-Forge-Welcome-1.0.1.eveforge). Update E.V.E before importing it, then preview and run staging checks before installation. Use the currently signed-in administrator account’s Windows password in the native prompt (not PIN/Hello). Application code/script packages remain blocked; native credential entry still needs your device acceptance test.
+Beta.2 adds signed data-only resource installs and restore, with native Windows account verification. [Download the Welcome resource pack](https://github.com/gtrongames57/eve-desktop-updates/releases/download/v2.4.1-beta.4/EVE-Forge-Welcome-1.0.2.eveforge). Update E.V.E before importing it, then preview and run staging checks before installation. Use the currently signed-in administrator account’s Windows password in the native prompt (not PIN/Hello). Application code/script packages remain blocked; native credential entry still needs your device acceptance test.
