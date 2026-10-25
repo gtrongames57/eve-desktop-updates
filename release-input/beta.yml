@@ -1,0 +1,10 @@
+version: 2.4.1-beta.6
+files:
+  - url: EVE-Setup-2.4.1-beta.6-x64.exe
+    sha512: >-
+      z+nGcQl1+g/iCj1BSQK5TInbJdWSKnR5HP7B699vHpNlcCAhfWsqyXtNqd9oVJygrPu0sSDIWYxnT6Ptoi183g==
+    size: 101160056
+path: EVE-Setup-2.4.1-beta.6-x64.exe
+sha512: >-
+  z+nGcQl1+g/iCj1BSQK5TInbJdWSKnR5HP7B699vHpNlcCAhfWsqyXtNqd9oVJygrPu0sSDIWYxnT6Ptoi183g==
+releaseDate: '2026-10-25T02:49:51.609Z'

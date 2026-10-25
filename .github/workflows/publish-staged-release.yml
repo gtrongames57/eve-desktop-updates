@@ -1,0 +1,36 @@
+name: Publish signed staged E.V.E release
+on:
+  push:
+    branches: ['release-staging-*']
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Reassemble and verify signed installer data
+        id: verify
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const envelope=JSON.parse(fs.readFileSync('release-input/eve-release.json','utf8'));
+          const raw=Buffer.from(envelope.manifest,'base64');
+          if(!crypto.verify(null,Buffer.concat([Buffer.from('EVE-DESKTOP-RELEASE-v1\0'),raw]),fs.readFileSync('release-input/release-authority.pem'),Buffer.from(envelope.signature,'base64')))throw Error('Publisher signature invalid');
+          const m=JSON.parse(raw),valid=/^\d+\.\d+\.\d+(?:-[a-z0-9]+(?:\.[a-z0-9]+)*)?$/i;
+          if(!valid.test(m.version)||m.releaseTag!=='v'+m.version||m.installer.name!=='EVE-Setup-'+m.version+'-x64.exe'||m.installer.size>209715200)throw Error('Unsupported release');
+          const names=fs.readdirSync('release-input/chunks').sort();if(!names.length||names.some(x=>!/^installer\.part\d{3}$/.test(x)))throw Error('Invalid chunks');
+          const data=Buffer.concat(names.map(x=>fs.readFileSync('release-input/chunks/'+x)));
+          if(data.length!==m.installer.size||crypto.createHash('sha256').update(data).digest('hex')!==m.installer.sha256||crypto.createHash('sha512').update(data).digest('base64')!==m.installer.sha512)throw Error('Installer inventory mismatch');
+          fs.mkdirSync('release-output');fs.writeFileSync('release-output/'+m.installer.name,data);
+          for(const name of ['beta.yml','eve-release.json'])fs.copyFileSync('release-input/'+name,'release-output/'+name);
+          const pack='EVE-Forge-Welcome-1.0.4.eveforge';if(fs.existsSync('release-input/'+pack))fs.copyFileSync('release-input/'+pack,'release-output/'+pack);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'tag='+m.releaseTag+'\n');
+          NODE
+      - name: Publish verified files without running the installer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.verify.outputs.tag }}
+        run: |
+          gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --target main --prerelease --title "E.V.E $RELEASE_TAG — desktop update beta" --notes-file release-input/release-notes.md release-output/*
