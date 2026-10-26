@@ -1,0 +1,10 @@
+version: 2.4.1-beta.8
+files:
+  - url: EVE-Setup-2.4.1-beta.8-x64.exe
+    sha512: >-
+      KuB58Vtg6PD457JqW5yHYycIX9EjUXoq91RBFuJw9vjEodZN0L4aFJYBTaSacS+QhcQU6BtOhBycVhWttzKQRA==
+    size: 101166514
+path: EVE-Setup-2.4.1-beta.8-x64.exe
+sha512: >-
+  KuB58Vtg6PD457JqW5yHYycIX9EjUXoq91RBFuJw9vjEodZN0L4aFJYBTaSacS+QhcQU6BtOhBycVhWttzKQRA==
+releaseDate: '2026-10-26T20:40:41.753Z'
