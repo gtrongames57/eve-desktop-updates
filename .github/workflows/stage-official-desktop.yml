@@ -1,0 +1,31 @@
+name: Stage signed official desktop release
+run-name: Stage signed E.V.E beta.10
+on:
+  push:
+    branches: [release-publisher-beta10]
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Assemble and bind only the verified public binary bytes
+        run: node publisher/assemble-payload.mjs
+      - name: Verify release authority installer inventory and channel metadata
+        run: node publisher/verify-payload.mjs
+      - name: Stage verified assets as an unpublished draft
+        run: >-
+          gh release create v2.4.1-beta.10 --draft --prerelease --latest=false
+          --target '${{ github.sha }}'
+          --title 'E.V.E 2.4.1-beta.10 — official desktop update'
+          --notes-file publisher/release-notes.md
+          staged/*

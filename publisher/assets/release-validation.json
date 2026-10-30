@@ -1,0 +1,17 @@
+{
+  "sourceCommit": "038b088d26e36fdd5fe238431909ee5872cf6626",
+  "windowsRun": "41001039970",
+  "fromVersion": "2.4.1-beta.9.acceptance.3.probe.1",
+  "toVersion": "2.4.1-beta.10",
+  "checks": {
+    "signedBridge": true,
+    "officialInstallerUpgrade": true,
+    "settingsCiphertextPreserved": true,
+    "voiceProviderReadback": true,
+    "postUpgradeStartup": true,
+    "gracefulStop": true,
+    "uninstallRetainsProfile": true
+  },
+  "automatedApproval": "synthetic-fixture-only",
+  "realInstallRequiresFreshNativeApproval": true
+}

@@ -1,0 +1,56 @@
+{
+  "version": "2.4.1-beta.10",
+  "sourceCommit": "038b088d26e36fdd5fe238431909ee5872cf6626",
+  "windowsRunId": "41001039970",
+  "artifactId": 12953728791,
+  "artifactSha256": "95d32a1b14d47758ddb63a5f20491c18f71763506cd3b4bb7d0f45ff9235925b",
+  "installerName": "EVE-Setup-2.4.1-beta.10-x64.exe",
+  "installerSize": 187819862,
+  "legacyCompatible": true,
+  "extraAssets": [
+    {
+      "name": "EVE-Trial-to-Beta10.zip",
+      "sha256": "ef249ff383420f0aaf6cbc1097107b97082ee052883bdd05ca8ca68273565553"
+    },
+    {
+      "name": "EVE-Forge-Welcome-1.0.7.eveforge",
+      "sha256": "fcb8cdb7f9fa6e43b252073dc18491d8095d0c7605639e49d2d6905e5e27e16f"
+    },
+    {
+      "name": "release-validation.json",
+      "sha256": "973f5b432fb61b7286c92aeba1a11ce8e334189044d81f0d616a6dcf8e7f5e01"
+    }
+  ],
+  "parts": [
+    {
+      "name": "part000.bin",
+      "size": 33554432,
+      "sha256": "e475eda1aa2b0fa6f071760ecc61284b48baf8e1fed85804996867dda13d342e"
+    },
+    {
+      "name": "part001.bin",
+      "size": 33554432,
+      "sha256": "e566c34e9e99826a452fa866cf5392c8245fd7e6529d95e8e2ec00b643782b58"
+    },
+    {
+      "name": "part002.bin",
+      "size": 33554432,
+      "sha256": "840d776b804c429047afde0e0ab776858abd06db1c0557c959f3be7071f2c4a3"
+    },
+    {
+      "name": "part003.bin",
+      "size": 33554432,
+      "sha256": "b60ca5f06033d81436a786301577eaa95977f162db84ab5cb869f5a3bc31313e"
+    },
+    {
+      "name": "part004.bin",
+      "size": 33554432,
+      "sha256": "7489c8f5fdb496731e3246faac6ef4c3a5e92e17d0d40fb1d11bb25ffeca7f35"
+    },
+    {
+      "name": "part005.bin",
+      "size": 20047702,
+      "sha256": "4947f68713e5b4ff11ced32063bdf82b10b90bcdbb727c525505abb8c5636fb0"
+    }
+  ]
+}
