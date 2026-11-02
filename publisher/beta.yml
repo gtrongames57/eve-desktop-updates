@@ -1,13 +1,12 @@
 {
-  "version": "2.4.1-beta.10",
+  "version": "2.4.1-beta.11",
   "files": [
     {
-      "url": "EVE-Setup-2.4.1-beta.10-x64.exe",
-      "sha512": "hofmzeqm/XpHsUTcvuf+Dr7g7mT6Q0omM23LyI83qeWrrT+TNTCN0Z9f88WHtklW2nDzhkr2KYN0CAgUjcM/Ww==",
-      "size": 187819862
+      "url": "EVE-Setup-2.4.1-beta.11-x64.exe",
+      "sha512": "Xe6qp54/eTICiZYbzKW7wakIzqs/XbG7cxSHBfmVCfNbmRzJZwYIsvi8UBP30hQ9woaFtIPF6wGH5HG7QP7SXQ==",
+      "size": 187821631
     }
   ],
-  "path": "EVE-Setup-2.4.1-beta.10-x64.exe",
-  "sha512": "hofmzeqm/XpHsUTcvuf+Dr7g7mT6Q0omM23LyI83qeWrrT+TNTCN0Z9f88WHtklW2nDzhkr2KYN0CAgUjcM/Ww==",
-  "releaseDate": "2026-10-30T04:30:38Z"
+  "path": "EVE-Setup-2.4.1-beta.11-x64.exe",
+  "sha512": "Xe6qp54/eTICiZYbzKW7wakIzqs/XbG7cxSHBfmVCfNbmRzJZwYIsvi8UBP30hQ9woaFtIPF6wGH5HG7QP7SXQ=="
 }

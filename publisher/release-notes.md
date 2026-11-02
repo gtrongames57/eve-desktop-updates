@@ -1,23 +1,17 @@
-E.V.E 2.4.1-beta.10 is the official Windows x64 desktop update on the existing beta channel.
+E.V.E 2.4.1-beta.11 adds SHADOW ACCESS to the existing FORGE Security & Permissions panel.
 
-### Included
-- Signed FORGE application updates with fresh native Windows approval, protected backup, private restarted-app health verification and automatic rollback on failed startup.
-- Independent **EVE Recovery** Start menu entry for interrupted updates.
-- Fix for **Install signed app update** remaining disabled after refresh, cancellation or a failed handoff.
-- Published release downloads remain optional; installation still requires native **Install and restart** confirmation.
+- Masked purple holographic code entry and explicit unlock/relock states.
+- Administrator-verified creation, permission changes, expiration, rotation, revocation, and recovery.
+- Public/private/experimental mode visibility enforced by the backend, with scoped expiring unlock sessions.
+- Salted Argon2id hashes with a memory-hard scrypt fallback for desktop runtimes that do not provide Argon2id; no plaintext-code storage or master bypass.
+- Persisted attempt limits, sanitized access history, native administrator verification, and visibility-policy rollback. Mode access does not approve sensitive desktop or update operations.
 
-### Install
-Close E.V.E, download **EVE-Setup-2.4.1-beta.10-x64.exe**, run it, and reopen E.V.E. The full installer does not need a separate Windows receipt. Existing settings, voices/provider credentials and conversations remain in the user profile. No Python setup, Docker or Windows Sandbox is required for published desktop updates.
+Install using EVE-Setup-2.4.1-beta.11-x64.exe, or check published app updates in the installed desktop app and review Install and restart. Close E.V.E before a manual installation. Keep your previous installer for rollback. Existing Fish Audio configuration, voice/provider settings, memory files, and integrations remain in your user profile.
 
-For the exact trial version **2.4.1-beta.9.acceptance.3.probe.1**, **EVE-Trial-to-Beta10.zip** provides a smaller alternative. Extract it; in FORGE choose **Install signed app update**, select its `.eveinstall` file, then its `.windows.json` receipt. This path requires fresh native Windows account approval. The receipt expires seven days after signing and cannot be reapplied after reaching beta.10. Other versions should use the full installer.
+After installation, open Settings → FORGE → Settings → Security & Permissions → SHADOW ACCESS. Choose Verify administrator & manage access, configure a mode's visibility, and create a code for its explicit mode permissions. A valid code also requires native administrator verification. Codes do not grant administrator privilege or replace other approval checks.
 
-Future published releases are checked under **FORGE → Settings → Published app updates**. Isolated `.evetest` packages remain testing-only; general arbitrary-code installation is not enabled. Signed resource `.eveforge` packs retain their separate approval flow.
+Validation includes 626 automated tests, browser unlock/relock checks, Windows Electron encrypted-registry persistence across launches, packaged-app permission checks, and real Windows installer/update/recovery acceptance. Automated Windows approvals are synthetic fixtures; the preceding SHADOW ACCESS review build was accepted by the user on Windows.
 
-### Validation
-614 automated tests and required project checks passed. The real Chromium regression covers the corrected native update control. Native Windows tests cover fresh installation, actual signed-ASAR restart/proof completion, deliberately invalid healthy-startup proof with automatic rollback, exact current-trial-to-official bridge, full NSIS upgrade, unchanged encrypted settings/custom voice/provider readback, normal shutdown and profile-retaining uninstall. Automated account approval is synthetic; actual installations still request the native user confirmation/account approval appropriate to their path.
+This is an official release on E.V.E's existing beta desktop channel. The website has not been updated. Windows Authenticode signing is not provided; E.V.E checks publisher-signed release metadata.
 
-Release authenticity uses the Ed25519 publisher authority already bundled in E.V.E and verified installer hashes. The installer is not Windows Authenticode-signed. This remains a beta-channel release, not a guarantee that every feature is defect-free.
-
-Installer SHA-256: `3df1ac0326e955f82657cd971166a4b5895b91bc268b49962b8b87ad8ec2c2f6`.
-
-Runtime source checkpoint: `038b088d26e36fdd5fe238431909ee5872cf6626`. Native Windows validation run: 41001039970. The accepted trial’s existing release verifier accepts this installer inventory. No production private signing key entered CI.
+Installer SHA-256: febc7fff233c83a8a4b21f3b2d9ea8849b8243022234daec18af5b841ab9378f

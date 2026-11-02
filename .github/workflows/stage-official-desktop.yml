@@ -1,8 +1,8 @@
 name: Stage signed official desktop release
-run-name: Stage signed E.V.E beta.10
+run-name: Stage signed E.V.E beta.11
 on:
   push:
-    branches: [release-publisher-beta10]
+    branches: [release-publisher-beta11]
 permissions:
   contents: write
 jobs:
@@ -24,8 +24,8 @@ jobs:
         run: node publisher/verify-payload.mjs
       - name: Stage verified assets as an unpublished draft
         run: >-
-          gh release create v2.4.1-beta.10 --draft --prerelease --latest=false
+          gh release create v2.4.1-beta.11 --draft --prerelease --latest=false
           --target '${{ github.sha }}'
-          --title 'E.V.E 2.4.1-beta.10 — official desktop update'
+          --title 'E.V.E 2.4.1-beta.11 — official desktop update'
           --notes-file publisher/release-notes.md
           staged/*
